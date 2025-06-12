@@ -1,4 +1,5 @@
 using BookSaw.Api.Common.Interfaces.Services;
+using BookSaw.Api.Domain.Books;
 using BookSaw.Api.Models.Requests;
 using BookSaw.Api.Models.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -15,7 +16,7 @@ public class BooksController(IBookService bookService) : ControllerBase
     public async Task<ActionResult<List<BookResponse>>> GetAll()
     {
         var books = await _bookService.GetAllAsync();
-        return Ok(books);
+        return Ok(books.Select(BookResponse.FromDomainModel).ToList());
     }
 
     [HttpGet("{id:guid}")]
@@ -23,17 +24,17 @@ public class BooksController(IBookService bookService) : ControllerBase
     {
         var book = await _bookService.GetByIdAsync(id);
         if (book is null)
-        {
+        {   
             return NotFound();
         }
-        return Ok(book);
+        return Ok(BookResponse.FromDomainModel(book));
     }
 
     [HttpPost]
     public async Task<ActionResult<BookResponse>> Create(CreateBookRequest request)
     {
         var book = await _bookService.CreateAsync(request);
-        return CreatedAtAction(nameof(GetById), new { id = book.Id }, book);
+        return CreatedAtAction(nameof(GetById), new { id = book.Id }, BookResponse.FromDomainModel(book));
     }
 
     [HttpPut("{id:guid}")]
@@ -44,7 +45,7 @@ public class BooksController(IBookService bookService) : ControllerBase
         {
             return NotFound();
         }
-        return Ok(book);
+        return Ok(BookResponse.FromDomainModel(book));
     }
 
     [HttpDelete("{id:guid}")]

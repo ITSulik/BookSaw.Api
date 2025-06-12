@@ -14,25 +14,23 @@ public class BookService(BookSawDbContext context) : IBookService
     private readonly BookSawDbContext _context = context;
 
 
-    public async Task<List<BookResponse>> GetAllAsync()
+    public async Task<List<Book>> GetAllAsync()
     {
-        var books = await _context.Books.ToListAsync();
-
-        return books.Select(BookResponse.FromDomainModel).ToList();
+        return await _context.Books.ToListAsync();
     }
 
-    public async Task<BookResponse?> GetByIdAsync(Guid id)
+    public async Task<Book> GetByIdAsync(Guid id)
     {
         var book = await _context.Books.FirstOrDefaultAsync(b => b.Id == id);
         if (book is null)
         {
             throw new NotFoundException($"Cartea nu a fost găsită.");
         }
-        
-        return BookResponse.FromDomainModel(book);
+
+        return book;
     }
 
-    public async Task<BookResponse> CreateAsync(CreateBookRequest request)
+    public async Task<Book> CreateAsync(CreateBookRequest request)
     {
         var book = new Book
         {
@@ -50,10 +48,10 @@ public class BookService(BookSawDbContext context) : IBookService
         _context.Books.Add(book);
         await _context.SaveChangesAsync();
 
-        return BookResponse.FromDomainModel(book);  
+        return book;  
     }
 
-    public async Task<BookResponse> UpdateAsync(Guid id, UpdateBookRequest request)
+    public async Task<Book> UpdateAsync(Guid id, UpdateBookRequest request)
     {
         var book = await _context.Books.FirstOrDefaultAsync(u => u.Id == id);
         if (book is null) 
@@ -71,7 +69,7 @@ public class BookService(BookSawDbContext context) : IBookService
 
         await _context.SaveChangesAsync();
 
-        return BookResponse.FromDomainModel(book);
+        return book;
     }
 
     public async Task DeleteAsync(Guid id)

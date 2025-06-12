@@ -1,12 +1,12 @@
 namespace BookSaw.Api.Models.Requests;
 
-public class UpdateBookRequest
-{
-    public string Title { get; set; } = null!;
-    public string Author { get; set; } = null!;
-    public string Description { get; set; } = null!;
-    public List<string> Categories { get; set; } = new();
-    public decimal Price { get; set; }
-    public bool InStock { get; set; }
-    public string ImageUrl { get; set; } = null!;
-}
+public sealed record UpdateBookRequest
+(
+    string Title,
+    string Author,
+    string Description,
+    List<string> Categories,
+    decimal Price,
+    bool InStock,
+    string ImageUrl
+);

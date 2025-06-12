@@ -1,6 +1,6 @@
 namespace BookSaw.Api.Domain.Books;
 
-public sealed record Book
+public sealed class Book
 {
     public Guid Id { get; set; }
 
