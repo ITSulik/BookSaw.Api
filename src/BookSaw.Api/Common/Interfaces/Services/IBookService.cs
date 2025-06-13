@@ -10,7 +10,7 @@ public interface IBookService
 
     Task<Book> UpdateAsync(Guid id, UpdateBookRequest request);
 
-    Task<BookResponse> PatchAsync(Guid id, PatchBookRequest request);
+    Task<Book> PatchAsync(Guid id, PatchBookRequest request);
 
     Task<Book> GetByIdAsync(Guid id);
 

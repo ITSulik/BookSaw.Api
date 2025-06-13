@@ -72,14 +72,14 @@ public class BookService(BookSawDbContext context) : IBookService
         return book;
     }
     
-public async Task<BookResponse> PatchAsync(Guid id, PatchBookRequest request)
+public async Task<Book> PatchAsync(Guid id, PatchBookRequest request)
 {
     var book = await _context.Books.FirstOrDefaultAsync(b => b.Id == id);
     if (book is null)
     {
         throw new NotFoundException("Cartea nu a fost găsită.");
     }
-    
+
     if (request.Title is not null) book.Title = request.Title;
     if (request.Author is not null) book.Author = request.Author;
     if (request.Description is not null) book.Description = request.Description;
@@ -90,7 +90,7 @@ public async Task<BookResponse> PatchAsync(Guid id, PatchBookRequest request)
 
     await _context.SaveChangesAsync();
 
-    return BookResponse.FromDomainModel(book);
+        return book;
 }
 
     public async Task DeleteAsync(Guid id)
