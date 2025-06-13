@@ -10,9 +10,11 @@ public sealed class Book
 
     public string Description { get; set; } = string.Empty;
 
-    public List<string> Categories { get; set; } = new();
+    public ICollection<BookCategory> BookCategories { get; set; } = new List<BookCategory>();
 
     public decimal Price { get; set; }
+
+    public decimal? OldPrice { get; set; } 
 
     public bool InStock { get; set; }
 

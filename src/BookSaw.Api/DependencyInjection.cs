@@ -1,5 +1,5 @@
 using BookSaw.Api.Services;
-using BookSaw.Api.Common.Interfaces.Services;
+using BookSaw.Api.Common.Interfaces.Services.BookService;
 using BookSaw.Api.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 

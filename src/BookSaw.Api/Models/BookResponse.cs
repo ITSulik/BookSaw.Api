@@ -10,6 +10,7 @@ public sealed record BookResponse
     string Description,
     List<string> Categories,
     decimal Price,
+    decimal? OldPrice,
     bool InStock,
     DateTime CreatedAt,
     string ImageUrl
@@ -21,8 +22,9 @@ public sealed record BookResponse
         book.Title,
         book.Author,
         book.Description,
-        book.Categories,
+        book.BookCategories.Select(bc => bc.Category.Name).ToList(),
         book.Price,
+        book.OldPrice,
         book.InStock,
         book.CreatedAt,
         book.ImageUrl
