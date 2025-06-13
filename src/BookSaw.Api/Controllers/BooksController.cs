@@ -1,8 +1,10 @@
 using BookSaw.Api.Common.Interfaces.Services;
+using BookSaw.Api.Common.Exceptions;
 using BookSaw.Api.Domain.Books;
 using BookSaw.Api.Models.Requests;
 using BookSaw.Api.Models.Responses;
 using Microsoft.AspNetCore.Mvc;
+
 
 
 namespace BookSaw.Api.Controllers;
@@ -24,7 +26,7 @@ public class BooksController(IBookService bookService) : ControllerBase
     {
         var book = await _bookService.GetByIdAsync(id);
         if (book is null)
-        {   
+        {
             return NotFound();
         }
         return Ok(BookResponse.FromDomainModel(book));
@@ -60,4 +62,19 @@ public class BooksController(IBookService bookService) : ControllerBase
 
         return NoContent();
     }
+
+    [HttpPatch("{id:guid}")]    
+    public async Task<ActionResult<BookResponse>> Patch(Guid id, PatchBookRequest request)
+    {
+    try
+    {
+        var book = await _bookService.PatchAsync(id, request);
+        return Ok(book);
+    }
+    catch (NotFoundException ex)
+    {
+        return NotFound(new { message = ex.Message });
+    }
+}
+
 }

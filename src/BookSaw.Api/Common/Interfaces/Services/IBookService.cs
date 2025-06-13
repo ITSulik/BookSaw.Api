@@ -7,8 +7,14 @@ namespace BookSaw.Api.Common.Interfaces.Services;
 public interface IBookService
 {
     Task<Book> CreateAsync(CreateBookRequest request);
+
     Task<Book> UpdateAsync(Guid id, UpdateBookRequest request);
+
+    Task<BookResponse> PatchAsync(Guid id, PatchBookRequest request);
+
     Task<Book> GetByIdAsync(Guid id);
+
     Task<List<Book>> GetAllAsync();
+
     Task DeleteAsync(Guid id);
 }
