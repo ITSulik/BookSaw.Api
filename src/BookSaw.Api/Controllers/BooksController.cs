@@ -63,18 +63,35 @@ public class BooksController(IBookService bookService) : ControllerBase
         return NoContent();
     }
 
-    [HttpPatch("{id:guid}")]    
+    [HttpPatch("{id:guid}")]
     public async Task<ActionResult<BookResponse>> Patch(Guid id, PatchBookRequest request)
     {
-    try
-    {
-        var book = await _bookService.PatchAsync(id, request);
-        return Ok(book);
+        try
+        {
+            var book = await _bookService.PatchAsync(id, request);
+            return Ok(book);
+        }
+        catch (NotFoundException ex)
+        {
+            return NotFound(new { message = ex.Message });
+        }
     }
-    catch (NotFoundException ex)
+
+    [HttpGet("search")]
+    public async Task<ActionResult<List<BookResponse>>> Search([FromQuery] string? query)
     {
-        return NotFound(new { message = ex.Message });
+        var books = await _bookService.SearchAsync(query ?? string.Empty);
+        var result = books.Select(BookResponse.FromDomainModel).ToList();
+        return Ok(result);
     }
-}
+
+    [HttpGet("filter")]
+    public async Task<ActionResult<List<BookResponse>>> Filter([FromQuery] FilterBooksRequest filter)
+    {
+        var books = await _bookService.FilterAsync(filter);
+        var result = books.Select(BookResponse.FromDomainModel).ToList();
+        return Ok(result);
+    }
+
 
 }

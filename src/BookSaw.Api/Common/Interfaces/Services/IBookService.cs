@@ -17,4 +17,7 @@ public interface IBookService
     Task<List<Book>> GetAllAsync();
 
     Task DeleteAsync(Guid id);
+
+    Task<List<Book>> SearchAsync(string query);
+    Task<List<Book>> FilterAsync(FilterBooksRequest filter);
 }
