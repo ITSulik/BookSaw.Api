@@ -85,6 +85,8 @@ public class BookService(BookSawDbContext context) : IBookService
         CreatedAt = DateTime.UtcNow,
         ImageUrl = request.ImageUrl
     };
+    
+    var categories = await _context.Categories.Where(t => request.Categories.Contains(t.Name)).ToListAsync();
 
     foreach (var categoryName in request.Categories.Distinct())
     {
