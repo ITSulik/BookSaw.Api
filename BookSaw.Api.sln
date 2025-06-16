@@ -1,10 +1,14 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{827E0CD3-B72D-47B6-A68D-7590B98EB39B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookSaw.Api", "src\BookSaw.Api\BookSaw.Api.csproj", "{DBFA3217-D1E5-56C0-42C3-595CA19189A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{0395647A-C18B-4C60-9B9D-AF28BB42FD8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookSaw.Seeder", "tools\BookSaw.Seeder\BookSaw.Seeder.csproj", "{73E45C21-F6C3-4A58-B740-93623003D320}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,12 +20,17 @@ Global
 		{DBFA3217-D1E5-56C0-42C3-595CA19189A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBFA3217-D1E5-56C0-42C3-595CA19189A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBFA3217-D1E5-56C0-42C3-595CA19189A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73E45C21-F6C3-4A58-B740-93623003D320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73E45C21-F6C3-4A58-B740-93623003D320}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73E45C21-F6C3-4A58-B740-93623003D320}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73E45C21-F6C3-4A58-B740-93623003D320}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DBFA3217-D1E5-56C0-42C3-595CA19189A1} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{73E45C21-F6C3-4A58-B740-93623003D320} = {0395647A-C18B-4C60-9B9D-AF28BB42FD8B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {67DD68A6-EBFC-41E3-A882-E93AEB37A948}

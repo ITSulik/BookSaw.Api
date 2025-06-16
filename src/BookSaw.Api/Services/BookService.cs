@@ -78,7 +78,7 @@ public class BookService(BookSawDbContext context) : IBookService
         Title = request.Title,
         Author = request.Author,
         Description = request.Description,
-        BookCategories = new List<BookCategory>(), // corect!
+        BookCategories = new List<BookCategory>(),
         Price = request.Price,
         OldPrice = request.OldPrice,
         InStock = request.InStock,
