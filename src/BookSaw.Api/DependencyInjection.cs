@@ -12,16 +12,13 @@ public static class DependencyInjection
         services.AddDbContext<BookSawDbContext>(options =>
             options.UseNpgsql(configuration.GetConnectionString("BookSawDb")));
 
+        return services;
+    }
+    
+    public static IServiceCollection AddApplicationServices(this IServiceCollection services)
+    {
         services.AddScoped<IBookService, BookService>();
 
         return services;
-    }
-
-    public static IHostBuilder UseApiServices(this IHostBuilder hostBuilder)
-    {
-        return hostBuilder.ConfigureServices((context, services) =>
-        {
-            services.AddDataBase(context.Configuration);
-        });
     }
 }
