@@ -3,7 +3,6 @@ using BookSaw.Api.Infrastructure.Persistence;
 using Bogus;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authentication;
 
 namespace BookSaw.Seeder.Services;
 
@@ -39,12 +38,12 @@ internal sealed class StagingSeeder(BookSawDbContext dbContext,
             {
                 Id = Guid.NewGuid(),
                 Author = f.Person.FullName,
-                Title = f.Lorem.Sentence(3),
-                Description = f.Lorem.Paragraph(2),
+                Title = f.Commerce.ProductName(),
+                Description = f.Commerce.ProductDescription(),
                 Price = f.Finance.Amount(min: 0, max: 100, decimals: 2),
                 InStock = f.Random.Bool(),
-                ImageUrl = f.Image.PicsumUrl(width: 100, height: 100),
-                CreatedAt = DateTime.Now
+                ImageUrl = f.Image.PicsumUrl(width: 220, height: 320),
+                
             };
 
             if (f.Random.Bool())
@@ -55,18 +54,25 @@ internal sealed class StagingSeeder(BookSawDbContext dbContext,
             var categories2 = f.PickRandom(categories, f.Random.Int(1, 4)).ToList();
             foreach (var c in categories2)
             {
-                book.BookCategories.Add(new BookCategory
+                dbContext.BookCategories.Add(new BookCategory
                 {
                     CategoryId = c.Id,
                     BookId = book.Id
                 });
             }
+            book.BookCategories = categories2.Select(c => new BookCategory
+            {
+                CategoryId = c.Id,
+                BookId = book.Id,
+                Category = c
+            }).ToList();
+
 
             return book;
 
         });
 
-        var books = faker.Generate(200);
+        var books = faker.Generate(50);
         dbContext.Books.AddRange(books);
         Logging.LoggerExtension.LogTableSeeded(logger, nameof(Book), books.Count);
     }

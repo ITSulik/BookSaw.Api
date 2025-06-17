@@ -2,6 +2,9 @@ version: "3.8"
 
 services:
     booksaw-api:
+        image: souliks/booksaw-api:latest
+        container_name: booksaw-api
+        restart: always
         build:
             context: .
             dockerfile: Dockerfile

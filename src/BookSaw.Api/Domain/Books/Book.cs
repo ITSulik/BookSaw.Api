@@ -14,11 +14,16 @@ public sealed class Book
 
     public decimal Price { get; set; }
 
-    public decimal? OldPrice { get; set; } 
+    public decimal? OldPrice { get; set; }
 
     public bool InStock { get; set; }
 
     public DateTime CreatedAt { get; set; }
 
     public string ImageUrl { get; set; } = string.Empty;
+    
+    public Book()
+    {
+        CreatedAt = DateTime.UtcNow;
+    }
 }

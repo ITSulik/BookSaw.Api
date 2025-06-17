@@ -17,12 +17,13 @@ public class BookService(BookSawDbContext context) : IBookService
 
     public async Task<List<Book>> GetAllBooksAsync()
     {
-        return await _context.Books.ToListAsync();
+        return await _context.Books
+         .Include(b => b.BookCategories).ThenInclude(bc => bc.Category).ToListAsync();
     }
 
     public async Task<Book> GetBookByIdAsync(Guid id)
     {
-        var book = await _context.Books.FirstOrDefaultAsync(b => b.Id == id);
+        var book = await _context.Books.Include(b => b.BookCategories).ThenInclude(bc => bc.Category).FirstOrDefaultAsync(b => b.Id == id);
         if (book is null)
         {
             throw new NotFoundException($"Cartea nu a fost găsită.");
@@ -71,7 +72,7 @@ public class BookService(BookSawDbContext context) : IBookService
 }
 
     public async Task<Book> AddBookAsync(CreateBookCommand request)
-{
+    {
     var book = new Book
     {
         Id = Guid.NewGuid(),
@@ -82,32 +83,34 @@ public class BookService(BookSawDbContext context) : IBookService
         Price = request.Price,
         OldPrice = request.OldPrice,
         InStock = request.InStock,
-        CreatedAt = DateTime.UtcNow,
         ImageUrl = request.ImageUrl
     };
+    
+    _context.Books.Add(book);
+    await _context.SaveChangesAsync();
 
     foreach (var categoryName in request.Categories.Distinct())
-    {
-        var category = await _context.Categories
-            .FirstOrDefaultAsync(c => c.Name.ToLower() == categoryName.ToLower());
-
-        if (category == null)
         {
-            category = new Category { Id = Guid.NewGuid(), Name = categoryName };
-            _context.Categories.Add(category);
-            await _context.SaveChangesAsync();
+            var category = await _context.Categories
+                .FirstOrDefaultAsync(c => c.Name.ToLower() == categoryName.ToLower());
+
+            if (category == null)
+            {
+                category = new Category { Id = Guid.NewGuid(), Name = categoryName };
+                _context.Categories.Add(category);
+                await _context.SaveChangesAsync();
+            }
+
+            book.BookCategories.Add(new BookCategory
+            {
+                BookId = book.Id,
+                CategoryId = category.Id,
+                Book = book,
+                Category = category
+            });
         }
 
-        book.BookCategories.Add(new BookCategory
-        {
-            BookId = book.Id,
-            CategoryId = category.Id,
-            Book = book,
-            Category = category
-        });
-    }
-
-    _context.Books.Add(book);
+    
     await _context.SaveChangesAsync();
 
     return book;
