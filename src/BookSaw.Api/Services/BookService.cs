@@ -28,7 +28,6 @@ public class BookService(BookSawDbContext context) : IBookService
         {
             throw new NotFoundException($"Cartea nu a fost găsită.");
         }
-
         return book;
     }
 
