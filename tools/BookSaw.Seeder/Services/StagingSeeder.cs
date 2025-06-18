@@ -60,13 +60,6 @@ internal sealed class StagingSeeder(BookSawDbContext dbContext,
                     BookId = book.Id
                 });
             }
-            book.BookCategories = categories2.Select(c => new BookCategory
-            {
-                CategoryId = c.Id,
-                BookId = book.Id,
-                Category = c
-            }).ToList();
-
 
             return book;
 
