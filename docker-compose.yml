@@ -9,7 +9,7 @@ services:
             context: .
             dockerfile: Dockerfile
         ports:
-            - "5234:80"
+            - "5234:8080"
         depends_on:
             - booksaw-db
         environment:
