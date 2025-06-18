@@ -33,5 +33,5 @@ var seederkey = environment.IsDevelopment() ? ProductionSeeder.Key : StagingSeed
 var migrationApplier = scopedprovider.GetRequiredService<MigrationApplier>();
 await migrationApplier.ApplyAsync();
 
-var seeder = scopedprovider.GetRequiredKeyedService<ISeeder>("StagingSeeder");
+var seeder = scopedprovider.GetRequiredKeyedService<ISeeder>(seederkey);
 await seeder.SeedAsync();

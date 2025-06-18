@@ -9,16 +9,6 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.6" />
   </ItemGroup>
 
-  
-  <ItemGroup>
-    <None Update="appsettings.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-
-
-
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
