@@ -5,12 +5,20 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY . .
+WORKDIR /tools
+COPY . .
 
-# Restore pe soluție (care include BookSaw.Api)
+WORKDIR /src
 RUN dotnet restore
 
-# Publicăm doar proiectul principal
+WORKDIR /tools
+RUN dotnet restore
+
+COPY ["src", "src"]
+COPY ["tools", "tools"]
 RUN dotnet publish "src/BookSaw.Api/BookSaw.Api.csproj" -c Release -o /app/publish
+
+RUN dotnet publish "tools/BookSaw.Seeder/BookSaw.Seeder.csproj" -c Release -o /app/publish/tools
 
 FROM base AS final
 WORKDIR /app

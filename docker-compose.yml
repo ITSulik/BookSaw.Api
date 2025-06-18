@@ -17,6 +17,12 @@ services:
             - ConnectionStrings__BookSawDb=Host=booksaw-db;Port=5432;Database=BookSawDb;Username=BookSaw;Password=BookSaw123
         networks:
             - booksaw-network
+        entrypoint:
+            - bash
+            - -c
+            - |
+                dotnet BookSaw.Seeder.dll &&
+                dotnet BookSaw.Api.dll
 
     booksaw-db:
         image: postgres:latest
