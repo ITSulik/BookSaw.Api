@@ -8,10 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 {
     builder.Services.AddControllers();
     builder.Services.AddDataBase(builder.Configuration); 
-    builder.WebHost.ConfigureKestrel(options =>
-    {
-        options.ListenAnyIP(5234);
-    });
 }
 
 var app = builder.Build();
