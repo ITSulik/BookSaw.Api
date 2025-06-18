@@ -1,12 +1,27 @@
 name: booksaw
 
 services:
+    booksaw-db:
+        image: postgres:latest
+        container_name: booksaw-db
+        restart: always
+        environment:
+            POSTGRES_DB: BookSawDb
+            POSTGRES_USER: BookSaw
+            POSTGRES_PASSWORD: BookSaw123
+        volumes:
+            - booksaw-db-volume:/var/lib/postgresql/data
+        ports:
+            - "5432:5432"
+        networks:
+            - booksaw-network
+
     booksaw-api:
         image: ghcr.io/itsulik/booksaw.api:latest
         container_name: booksaw-api
         restart: always
         ports:
-            - "5234:80"
+            - "5234:8080"
         depends_on:
             - booksaw-db
         environment:
@@ -25,23 +40,8 @@ services:
             - bash
             - -c
             - |
-                dotnet BookSaw.Seeder.dll &&
+                dotnet tools/BookSaw.Seeder.dll &&
                 dotnet BookSaw.Api.dll
-
-    booksaw-db:
-        image: postgres:latest
-        container_name: booksaw-db
-        restart: always
-        environment:
-            POSTGRES_DB: BookSawDb
-            POSTGRES_USER: BookSaw
-            POSTGRES_PASSWORD: BookSaw123
-        volumes:
-            - booksaw-db-volume:/var/lib/postgresql/data
-        ports:
-            - "5432:5432"
-        networks:
-            - booksaw-network
 
 volumes:
     booksaw-db-volume:
