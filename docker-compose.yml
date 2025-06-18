@@ -1,19 +1,23 @@
-version: "3.8"
+name: booksaw
 
 services:
     booksaw-api:
-        image: souliks/booksaw-api:latest
+        image: ghcr.io/itsulik/booksaw.api:latest
         container_name: booksaw-api
         restart: always
-        build:
-            context: .
-            dockerfile: Dockerfile
         ports:
             - "5234:80"
         depends_on:
             - booksaw-db
         environment:
+            - TZ=Europe/Chisinau
             - ASPNETCORE_ENVIRONMENT=Development
+            - DOTNET_ENVIRONMENT=Development
+            - AllowedHosts=*
+            - Logging:LogLevel:Default=Warning
+            - Logging:LogLevel:Microsoft.Hosting.Lifetime=Information
+            - Logging:LogLevel:BookSaw.Api=Information
+            - Logging:LogLevel:BookSaw.Seeder=Debug
             - ConnectionStrings__BookSawDb=Host=booksaw-db;Port=5432;Database=BookSawDb;Username=BookSaw;Password=BookSaw123
         networks:
             - booksaw-network
