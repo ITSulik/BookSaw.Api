@@ -1,6 +1,25 @@
 name: booksaw
 
 services:
+    booksaw-proxy:
+        image: nginx:latest
+        container_name: booksaw-proxy
+        restart: always
+        ports:
+            - "80:80"
+        volumes:
+            - ./nginx/booksaw-proxy.conf:/etc/nginx/conf.d/default.conf
+        networks:
+            - booksaw-network
+
+    booksaw-website:
+        image: ghcr.io/he1enm/booksaw.website:latest
+        container_name: booksaw-website
+        restart: always
+
+        networks:
+            - booksaw-network
+
     booksaw-db:
         image: postgres:latest
         container_name: booksaw-db
@@ -17,11 +36,12 @@ services:
             - booksaw-network
 
     booksaw-api:
-        image: ghcr.io/itsulik/booksaw.api:latest
+        build: .
         container_name: booksaw-api
         restart: always
+
         ports:
-            - "5234:8080"
+            - "8080:80"
         depends_on:
             - booksaw-db
         environment:

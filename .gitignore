@@ -17,4 +17,3 @@ artifacts/
 *.mdb
 *.sln.ide
 appsettings.development.json
-/nginx
