@@ -28,7 +28,7 @@ using var scope = host.Services.CreateScope();
 var scopedprovider = scope.ServiceProvider;
 
 var environment = scopedprovider.GetRequiredService<IHostEnvironment>();
-var seederkey = environment.IsDevelopment() ? StagingSeeder.Key : ProductionSeeder.Key;
+var seederkey = environment.IsDevelopment() ? ProductionSeeder.Key : StagingSeeder.Key;
 
 var migrationApplier = scopedprovider.GetRequiredService<MigrationApplier>();
 await migrationApplier.ApplyAsync();
