@@ -3,6 +3,7 @@ using BookSaw.Api.Infrastructure.Persistence;
 using Bogus;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 
 namespace BookSaw.Seeder.Services;
 

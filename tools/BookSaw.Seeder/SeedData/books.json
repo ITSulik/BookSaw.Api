@@ -1,0 +1,578 @@
+[
+    {
+        "title": "Once upon a time",
+        "author": "Evelyn Moore",
+        "description": "A magical story about courage, friendship, and the journey of self-discovery in a forgotten kingdom. When a girl named Elara finds an enchanted book in an old library, she is transported to a world where fairy tales come alive and every choice leads her closer to truth or darkness. A captivating novel filled with symbolism, emotion, and adventure, reminding us that within each of us lies a hero waiting to awaken.",
+        "categories": [
+            "Fiction",
+            "Fantasy",
+            "Young Adult",
+            "Adventure"
+        ],
+        "price": 39.99,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/270858434-256-k932472.jpg"
+    },
+    {
+        "title": "The Cellar",
+        "author": "Natasha Preston",
+        "description": "Sixteen‑year‑old Summer is kidnapped by a mysterious man who calls himself Clover and held captive in a meticulously kept underground cellar alongside three other girls—Rose, Poppy, and Violet—whom he refers to as his “flowers.” Told through alternating perspectives (Summer, her boyfriend Lewis, and even Clover himself), this gripping YA psychological thriller explores survival, trauma, and the desperate drive to reclaim one’s identity in the face of darkness.",
+        "categories": [
+            "Fiction",
+            "Young Adult",
+            "Psychological Thriller"
+        ],
+        "price": 59.99,
+        "oldprice": 79.99,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/73997-256-k293454.jpg"
+    },
+    {
+        "title": "Revenant",
+        "author": "Taylor Lee",
+        "description": "In 'Revenant', a quiet life is shattered when secrets from the past resurface, threatening everything the main character holds dear.",
+        "categories": ["Romance"],
+        "price": 29.99,
+        "oldprice": null,
+        "inStock": false,
+        "imageUrl": "https://img.wattpad.com/cover/395105700-256-k902555.jpg"
+    },
+    {
+        "title": "The Unknown Family",
+        "author": "Emily Miller",
+        "description": "'The Unknown Family' is a journey through heartbreak, self-discovery, and the strength it takes to start over when the world falls apart.",
+        "categories": [
+            "Romance",
+            "Mystery",
+            "Contemporary"
+        ],
+        "price": 29.99,
+        "oldprice": 39.99,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/299340449-256-k102246.jpg"
+    },
+    {
+        "title": "Daffodil",
+        "author": "Ava",
+        "description": "With a mix of suspense and emotional depth, 'Daffodil' explores how far someone will go for love, redemption, and the truth.",
+        "categories": ["Contemporary"],
+        "price": 19.43,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/393691731-256-k977205.jpg"
+    },
+    {
+        "title": "Sold to the Mafia",
+        "author": "Ava Miller",
+        "description": "In this gripping tale, 'Sold to the Mafia' unveils the darkness behind the perfect facade and the resilience of a heart scarred by betrayal.",
+        "categories": [
+            "Mystery",
+            "Drama",
+            "Poetry"
+        ],
+        "price": 19.99,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/272860620-256-k785539.jpg"
+    },
+    {
+        "title": "Shes Theirs",
+        "author": "Jordan Lee",
+        "description": "Set in a vividly imagined world, 'Shes Theirs' is a breathtaking story of survival, loyalty, and the magic hidden in plain sight.",
+        "categories": ["Psychological"],
+        "price": 14.7,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/387147123-256-k939776.jpg"
+    },
+    {
+        "title": "Tangled: Hearts and Truths",
+        "author": "Ruhii",
+        "description": "An emotional rollercoaster, 'Tangled: Hearts and Truths' dives into the complexity of human connection, loss, and the courage to forgive.",
+        "categories": ["Mystery"],
+        "price": 15.99,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/353506301-256-k418629.jpg"
+    },
+    {
+        "title": "Invade My Heart",
+        "author": "Zabel Lerain",
+        "description": "'Invade My Heart' brings to life a haunting yet beautiful narrative of a soul trying to find peace amidst chaos and pain.",
+        "categories": ["Contemporary"],
+        "price": 17.57,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/6580190-256-k446044.jpg"
+    },
+    {
+        "title": "Ashes of the Innocent",
+        "author": "Ava Gray",
+        "description": "A powerful coming-of-age story, 'Ashes of the Innocent' traces one person's path through grief, healing, and the search for meaning.",
+        "categories": ["Thriller"],
+        "price": 18.5,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/392607261-256-k405785.jpg"
+    },
+    {
+        "title": "Beneath The Ashes",
+        "author": "Jordan Miller",
+        "description": "'Beneath The Ashes' is an unforgettable exploration of identity, memory, and the silent battles we fight within ourselves.",
+        "categories": ["Mystery"],
+        "price": 19.67,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/391654512-256-k723571.jpg"
+    },
+    {
+        "title": "The Lost De'Luca",
+        "author": "SymplyNath",
+        "description": "With poetic prose and raw honesty, 'The Lost De'Luca' captures the delicate dance between vulnerability and strength.",
+        "categories": [
+            "Fantasy",
+            "Drama",
+            "Psychological"
+        ],
+        "price": 18.88,
+        "oldprice": null,
+        "inStock": false,
+        "imageUrl": "https://img.wattpad.com/cover/339047745-256-k25535.jpg"
+    },
+    {
+        "title": "Redemption",
+        "author": "Morgan Barth",
+        "description": "In 'Redemption', a quiet life is shattered when secrets from the past resurface, threatening everything the main character holds dear.",
+        "categories": ["Young Adult"],
+        "price": 7.35,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/385437907-256-k383614.jpg"
+    },
+    {
+        "title": "The Playmaker",
+        "author": "Morgan Barth",
+        "description": "'The Playmaker' is a journey through heartbreak, self-discovery, and the strength it takes to start over when the world falls apart.",
+        "categories": [
+            "Poetry",
+            "Contemporary",
+            "Drama"
+        ],
+        "price": 10.14,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/395780087-256-k930432.jpg"
+    },
+    {
+        "title": "Thorns and petals",
+        "author": "Jordan Lee",
+        "description": "With a mix of suspense and emotional depth, 'Thorns and petals' explores how far someone will go for love, redemption, and the truth.",
+        "categories": ["Romance", "Fantasy"],
+        "price": 13.03,
+        "oldprice": 27.18,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/385743998-256-k867753.jpg"
+    },
+    {
+        "title": "All Yours",
+        "author": "Lucas Gray",
+        "description": "In this gripping tale, 'All Yours' unveils the darkness behind the perfect facade and the resilience of a heart scarred by betrayal.",
+        "categories": ["Young Adult", "Romance"],
+        "price": 7.24,
+        "oldprice": null,
+        "inStock": false,
+        "imageUrl": "https://img.wattpad.com/cover/297582377-256-k589187.jpg"
+    },
+    {
+        "title": "Golden Girl",
+        "author": "Lusiana Tubamasi",
+        "description": "Set in a vividly imagined world, 'GOLDEN GIRL' is a breathtaking story of survival, loyalty, and the magic hidden in plain sight.",
+        "categories": ["Contemporary"],
+        "price": 9.35,
+        "oldprice": 29.62,
+        "inStock": false,
+        "imageUrl": "https://img.wattpad.com/cover/288588961-256-k805392.jpg"
+    },
+    {
+        "title": "You win",
+        "author": "Vanessa",
+        "description": "An emotional rollercoaster, 'You win' dives into the complexity of human connection, loss, and the courage to forgive.",
+        "categories": [
+            "Thriller",
+            "Young Adult",
+            "Contemporary"
+        ],
+        "price": 14.89,
+        "oldprice": null,
+        "inStock": false,
+        "imageUrl": "https://img.wattpad.com/cover/319586061-256-k682292.jpg"
+    },
+    {
+        "title": "When We Write the Stars",
+        "author": "Claire Winters",
+        "description": "'When We Write the Stars' brings to life a haunting yet beautiful narrative of a soul trying to find peace amidst chaos and pain.",
+        "categories": ["Romance"],
+        "price": 35.27,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/344144418-256-k513633.jpg"
+    },
+    {
+        "title": "Romancing the Son of Heaven",
+        "author": "Yan Su Su",
+        "description": "A powerful coming-of-age story, 'Romancing the Son of Heaven' traces one person's path through grief, healing, and the search for meaning.",
+        "categories": [
+            "Poetry",
+            "Adventure",
+            "Mystery"
+        ],
+        "price": 18.5,
+        "oldprice": 29.05,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/316930206-256-k289237.jpg"
+    },
+    {
+        "title": "Nocturne's Night",
+        "author": "Ava Thompson",
+        "description": "'Nocturne's Night' is an unforgettable exploration of identity, memory, and the silent battles we fight within ourselves.",
+        "categories": ["Fantasy"],
+        "price": 16.86,
+        "oldprice": null,
+        "inStock": false,
+        "imageUrl": "https://img.wattpad.com/cover/369209510-256-k415.jpg"
+    },
+    {
+        "title": "Everything Ends One Day",
+        "author": "Lucas Gray",
+        "description": "With poetic prose and raw honesty, 'Everything Ends One Day' captures the delicate dance between vulnerability and strength.",
+        "categories": ["Contemporary"],
+        "price": 24.48,
+        "oldprice": null,
+        "inStock": false,
+        "imageUrl": "https://img.wattpad.com/cover/396169469-256-k6446.jpg"
+    },
+    {
+        "title": "Almost Us",
+        "author": "Lizzy Hazel",
+        "description": "In 'Almost Us', a quiet life is shattered when secrets from the past resurface, threatening everything the main character holds dear.",
+        "categories": ["Romance"],
+        "price": 14.18,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/396094032-256-k894368.jpg"
+    },
+    {
+        "title": "Volume: Zero",
+        "author": "Jordan Thompson",
+        "description": "'Volume: Zero' is a journey through heartbreak, self-discovery, and the strength it takes to start over when the world falls apart.",
+        "categories": ["Young Adult"],
+        "price": 46.13,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/395971281-256-k711866.jpg"
+    },
+    {
+        "title": "Lost and Found",
+        "author": "Princess Nicole Magalonga",
+        "description": "With a mix of suspense and emotional depth, 'Lost and Found' explores how far someone will go for love, redemption, and the truth.",
+        "categories": [
+            "Adventure",
+            "Young Adult"
+        ],
+        "price": 13.07,
+        "oldprice": 22.32,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/294902260-256-k600957.jpg"
+    },
+    {
+        "title": "Laments Of A Fool",
+        "author": "Taylor Lee",
+        "description": "In this gripping tale, 'Laments Of A Fool' unveils the darkness behind the perfect facade and the resilience of a heart scarred by betrayal.",
+        "categories": ["Poetry", "Psychological"],
+        "price": 7.93,
+        "oldprice": null,
+        "inStock": false,
+        "imageUrl": "https://img.wattpad.com/cover/391821288-256-k902701.jpg"
+    },
+    {
+        "title": "The Space Between Words",
+        "author": "Lucas Thompson",
+        "description": "Set in a vividly imagined world, 'The Space Between Words' is a breathtaking story of survival, loyalty, and the magic hidden in plain sight.",
+        "categories": ["Adventure"],
+        "price": 15.22,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/396120131-256-k940266.jpg"
+    },
+    {
+        "title": "Jesus Happened",
+        "author": "Alcel Marie",
+        "description": "An emotional rollercoaster, 'Jesus Happened' dives into the complexity of human connection, loss, and the courage to forgive.",
+        "categories": ["Mystery", "Poetry"],
+        "price": 17.51,
+        "oldprice": 27.68,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/390179144-256-k68585.jpg"
+    },
+    {
+        "title": "The girl they never noticed",
+        "author": "Taylor Reyes",
+        "description": "'The girl they never noticed' brings to life a haunting yet beautiful narrative of a soul trying to find peace amidst chaos and pain.",
+        "categories": ["Romance"],
+        "price": 16.11,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/395940948-256-k649538.jpg"
+    },
+    {
+        "title": "Unsaid thoughts",
+        "author": "Emily Thompson",
+        "description": "A powerful coming-of-age story, 'Unsaid thoughts' traces one person's path through grief, healing, and the search for meaning.",
+        "categories": [
+            "Romance",
+            "Poetry",
+            "Psychological"
+        ],
+        "price": 19.09,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/395899209-256-k582868.jpg"
+    },
+    {
+        "title": "The Quiet Fight For Love",
+        "author": "Jordan Gray",
+        "description": "'The Quiet Fight For Love' is an unforgettable exploration of identity, memory, and the silent battles we fight within ourselves.",
+        "categories": ["Poetry", "Fantasy"],
+        "price": 17.67,
+        "oldprice": 28.81,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/396182664-256-k26147.jpg"
+    },
+    {
+        "title": "Beats and breaks of a heart",
+        "author": "Marcela Terol",
+        "description": "With poetic prose and raw honesty, 'Beats and breaks of a heart' captures the delicate dance between vulnerability and strength.",
+        "categories": [
+            "Adventure",
+            "Drama",
+            "Fantasy"
+        ],
+        "price": 12.82,
+        "oldprice": 25.52,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/395835674-256-k478492.jpg"
+    },
+    {
+        "title": "Thursday",
+        "author": "Emily Lee",
+        "description": "In 'Thursday', a quiet life is shattered when secrets from the past resurface, threatening everything the main character holds dear.",
+        "categories": ["Adventure"],
+        "price": 16.71,
+        "oldprice": 24.05,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/108349574-256-k448764.jpg"
+    },
+    {
+        "title": "Drops of Poetry",
+        "author": "Lorenzo Que",
+        "description": "'Drops of Poetry' is a journey through heartbreak, self-discovery, and the strength it takes to start over when the world falls apart.",
+        "categories": [
+            "Mystery",
+            "Contemporary",
+            "Adventure"
+        ],
+        "price": 17.15,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/68697472-256-k268443.jpg"
+    },
+    {
+        "title": "Midnight Thoughts",
+        "author": "John Schorwinson",
+        "description": "With a mix of suspense and emotional depth, 'Midnight Thoughts' explores how far someone will go for love, redemption, and the truth.",
+        "categories": ["Mystery"],
+        "price": 14.06,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/105220693-256-k824482.jpg"
+    },
+    {
+        "title": "Oblivion",
+        "author": "Lucas Gray",
+        "description": "In this gripping tale, 'Oblivion' unveils the darkness behind the perfect facade and the resilience of a heart scarred by betrayal.",
+        "categories": ["Young Adult"],
+        "price": 16.2,
+        "oldprice": 27.16,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/391662833-256-k645889.jpg"
+    },
+    {
+        "title": "My Type of Socializing",
+        "author": "Saint Caliendo",
+        "description": "Set in a vividly imagined world, 'My Type of Socializing' is a breathtaking story of survival, loyalty, and the magic hidden in plain sight.",
+        "categories": ["Romance", "Poetry"],
+        "price": 17.46,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/132136778-256-k332651.jpg"
+    },
+    {
+        "title": "Dream Catcher",
+        "author": "Sandra Grayson",
+        "description": "An emotional rollercoaster, 'Dream Catcher' dives into the complexity of human connection, loss, and the courage to forgive.",
+        "categories": [
+            "Psychological",
+            "Mystery",
+            "Romance"
+        ],
+        "price": 9.06,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/46181392-256-k173128.jpg"
+    },
+    {
+        "title": "Dream Phantom",
+        "author": "Sandra Grayson",
+        "description": "'Dream Phantom' brings to life a haunting yet beautiful narrative of a soul trying to find peace amidst chaos and pain.",
+        "categories": [
+            "Psychological",
+            "Adventure",
+            "Romance"
+        ],
+        "price": 15.25,
+        "oldprice": 20.03,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/110927824-256-k78874.jpg"
+    },
+    {
+        "title": "Mary's Bones",
+        "author": "April Wright",
+        "description": "A powerful coming-of-age story, 'Mary's Bones' traces one person's path through grief, healing, and the search for meaning.",
+        "categories": [
+            "Thriller",
+            "Romance",
+            "Adventure"
+        ],
+        "price": 6.0,
+        "oldprice": 20.39,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/200628763-256-k311052.jpg"
+    },
+    {
+        "title": "The Facebook Stalker",
+        "author": "Tierney",
+        "description": "'The Facebook Stalker' is an unforgettable exploration of identity, memory, and the silent battles we fight within ourselves.",
+        "categories": [
+            "Young Adult",
+            "Psychological"
+        ],
+        "price": 22.6,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/275798-256-k704626.jpg"
+    },
+    {
+        "title": "Dreamscape",
+        "author": "Sandra Grayson",
+        "description": "With poetic prose and raw honesty, 'Dreamscape' captures the delicate dance between vulnerability and strength.",
+        "categories": [
+            "Psychological",
+            "Young Adult"
+        ],
+        "price": 16.89,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/47371897-256-k173317.jpg"
+    },
+    {
+        "title": "Forever in Your Deadly Heart",
+        "author": "Taylor Thompson",
+        "description": "In 'Forever in Your Deadly Heart', a quiet life is shattered when secrets from the past resurface, threatening everything the main character holds dear.",
+        "categories": ["Drama"],
+        "price": 10.64,
+        "oldprice": null,
+        "inStock": false,
+        "imageUrl": "https://img.wattpad.com/cover/354194352-256-k304061.jpg"
+    },
+    {
+        "title": "Dream Hunter",
+        "author": "Sandra Grayson",
+        "description": "'Dream Hunter' is a journey through heartbreak, self-discovery, and the strength it takes to start over when the world falls apart.",
+        "categories": [
+            "Adventure",
+            "Young Adult"
+        ],
+        "price": 22.37,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/48995800-256-k173206.jpg"
+    },
+    {
+        "title": "Soul Dorm",
+        "author": "Ezgi Caglar",
+        "description": "With a mix of suspense and emotional depth, 'Soul Dorm' explores how far someone will go for love, redemption, and the truth.",
+        "categories": ["Fantasy", "Thriller"],
+        "price": 12.95,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/365966760-256-k619867.jpg"
+    },
+    {
+        "title": "Lilah",
+        "author": "Ashlyn Pope",
+        "description": "In this gripping tale, 'Lilah' unveils the darkness behind the perfect facade and the resilience of a heart scarred by betrayal.",
+        "categories": ["Mystery"],
+        "price": 18.44,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/181121904-256-k922024.jpg"
+    },
+    {
+        "title": "Contrast",
+        "author": "Jaderact",
+        "description": "Set in a vividly imagined world, 'Contrast' is a breathtaking story of survival, loyalty, and the magic hidden in plain sight.",
+        "categories": [
+            "Thriller",
+            "Fantasy",
+            "Contemporary"
+        ],
+        "price": 17.23,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/337553805-256-k689625.jpg"
+    },
+    {
+        "title": "The baby swap",
+        "author": "Lucas Thompson",
+        "description": "An emotional rollercoaster, 'The baby swap' dives into the complexity of human connection, loss, and the courage to forgive.",
+        "categories": [
+            "Thriller",
+            "Psychological"
+        ],
+        "price": 18.4,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/203677881-256-k974890.jpg"
+    },
+    {
+        "title": "Sweet Bastard",
+        "author": "Neilani Alejandrino",
+        "description": "'Sweet Bastard' brings to life a haunting yet beautiful narrative of a soul trying to find peace amidst chaos and pain.",
+        "categories": ["Contemporary", "Romance"],
+        "price": 12.68,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/125486510-256-k172402.jpg"
+    },
+    {
+        "title": "Alpha Raven",
+        "author": "Jordan Thompson",
+        "description": "A powerful coming-of-age story, 'Alpha Raven' traces one person's path through grief, healing, and the search for meaning.",
+        "categories": ["Mystery", "Poetry"],
+        "price": 17.18,
+        "oldprice": null,
+        "inStock": true,
+        "imageUrl": "https://img.wattpad.com/cover/65005812-256-k266725.jpg"
+    }
+]
