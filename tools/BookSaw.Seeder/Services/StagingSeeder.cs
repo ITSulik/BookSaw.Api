@@ -4,6 +4,8 @@ using Bogus;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
+using System.Reflection.Metadata;
+using BookSaw.Seeder.Models;
 
 namespace BookSaw.Seeder.Services;
 
@@ -16,9 +18,12 @@ internal sealed class StagingSeeder(BookSawDbContext dbContext,
     {
         Logging.LoggerExtension.LogSeedingStarted(logger);
 
-        await SeedCategoriesAsync(cancellationToken);
-        await dbContext.SaveChangesAsync(cancellationToken);
-        await SeedBooksAsync(cancellationToken);
+        // await SeedCategoriesAsync(cancellationToken);
+        // await dbContext.SaveChangesAsync(cancellationToken);
+        // await SeedBooksAsync(cancellationToken);
+        // await dbContext.SaveChangesAsync(cancellationToken);
+
+        await SeedCustomBooksAsync(cancellationToken);
         await dbContext.SaveChangesAsync(cancellationToken);
 
         Logging.LoggerExtension.LogSeedingCompleted(logger);
@@ -94,4 +99,83 @@ internal sealed class StagingSeeder(BookSawDbContext dbContext,
         dbContext.Categories.AddRange(categories);
         Logging.LoggerExtension.LogTableSeeded(logger, nameof(Category), categories.Count);
     }
+
+    
+
+    private async Task SeedCustomBooksAsync(CancellationToken cancellationToken)
+{
+    if (await dbContext.Books.AnyAsync(cancellationToken))
+    {
+        Logging.LoggerExtension.LogTableAlreadySeeded(logger, nameof(Book));
+        return;
+    }
+
+    var jsonPath = Path.Combine(AppContext.BaseDirectory, "SeedData", "books.json");
+    if (!File.Exists(jsonPath))
+    {
+        logger.LogWarning("books.json not found at path: {Path}", jsonPath);
+        return;
+    }
+
+    var jsonString = await File.ReadAllTextAsync(jsonPath, cancellationToken);
+    var rawBooks = JsonSerializer.Deserialize<List<BookDto>>(jsonString, new JsonSerializerOptions
+    {
+        PropertyNameCaseInsensitive = true
+    }) ?? new List<BookDto>();
+
+    var existingCategories = await dbContext.Categories.ToListAsync(cancellationToken);
+    var categoryDict = existingCategories.ToDictionary(c => c.Name, c => c.Id);
+
+    var newCategories = rawBooks
+        .SelectMany(b => b.Categories)
+        .Distinct()
+        .Where(cat => !categoryDict.ContainsKey(cat))
+        .Select(cat => new Category { Id = Guid.NewGuid(), Name = cat })
+        .ToList();
+
+    dbContext.Categories.AddRange(newCategories);
+    await dbContext.SaveChangesAsync(cancellationToken);
+
+    foreach (var newCat in newCategories)
+    {
+        categoryDict[newCat.Name] = newCat.Id;
+    }
+
+    var books = new List<Book>();
+    var bookCategories = new List<BookCategory>();
+
+    foreach (var raw in rawBooks)
+    {
+        var bookId = Guid.NewGuid();
+        var book = new Book
+        {
+            Id = bookId,
+            Title = raw.Title,
+            Author = raw.Author,
+            Description = raw.Description,
+            Price = raw.Price,
+            OldPrice = raw.OldPrice,
+            InStock = raw.InStock,
+            ImageUrl = raw.ImageUrl
+        };
+
+        foreach (var cat in raw.Categories)
+        {
+            if (categoryDict.TryGetValue(cat, out var catId))
+            {
+                bookCategories.Add(new BookCategory
+                {
+                    BookId = bookId,
+                    CategoryId = catId
+                });
+            }
+        }
+
+        books.Add(book);
+    }
+
+    dbContext.Books.AddRange(books);
+    dbContext.BookCategories.AddRange(bookCategories);
+    Logging.LoggerExtension.LogTableSeeded(logger, nameof(Book), books.Count);
+}
 }
