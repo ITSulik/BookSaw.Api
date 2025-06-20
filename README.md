@@ -26,7 +26,7 @@
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-user/BookSaw.Api.git
+git clone https://github.com/ITSulik/BookSaw.Api.git
 cd BookSaw.Api
 ```
 
